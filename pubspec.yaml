@@ -24,6 +24,7 @@ dependencies:
   flutter_svg: ^0.19.1
   flutter:
     sdk: flutter
+  flutter_statusbarcolor:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -64,10 +65,11 @@ flutter:
   - family: Brandon
     fonts:
       - asset: assets/fonts/Brandon.ttf
-
   - family: Bad_Script
     fonts:
       - asset: assets/fonts/Bad_Script.ttf
-
+  - family: BrandonGrotesque
+    fonts:
+      - asset: assets/fonts/BrandonGrotesque-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
