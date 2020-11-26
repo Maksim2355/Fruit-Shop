@@ -4,7 +4,7 @@ import 'package:sample_app/values/fonts.dart';
 import 'package:sample_app/values/icon.dart';
 import 'package:sample_app/values/string.dart';
 
-import 'custom_views/custom_button.dart';
+import 'package:sample_app/presentation/custom_views/custom_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

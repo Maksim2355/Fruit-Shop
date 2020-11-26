@@ -5,6 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sample_app/values/dimens.dart';
 import 'package:sample_app/values/fonts.dart';
 import 'package:sample_app/values/icon.dart';
+import 'package:sample_app/values/key.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -37,8 +39,17 @@ class SplashScreen extends StatelessWidget {
     );
   }
 
-  void waitAndStartApp(BuildContext context) {
-    Future.delayed(Duration(seconds: 2),
-        () => Navigator.pushReplacementNamed(context, '/welcome_screen'));
+  void waitAndStartApp(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isUserAuth = prefs.containsKey(KeySharedPreferences.KEY_USERNAME);
+    Future.delayed(Duration(seconds: 1), () =>{
+      if(isUserAuth){
+        Navigator.pushReplacementNamed(context, '/home_screen')
+      }else{
+        Navigator.pushReplacementNamed(context, '/welcome_screen')
+      }
+    });
+
   }
+
 }
